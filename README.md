@@ -21,4 +21,4 @@ Download and run `python setup.py install develop` or `python3 setup.py install 
 A simple Flask server used to receive the webhooks from Tradingview is reused without modifying. There is no need to configure some port forwarding on your router to the machine running the datafeed. 
 
 ## Testing  
-Run example.py for testing the script. 
+Run example_strategy.py for testing the script. 
