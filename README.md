@@ -4,9 +4,14 @@ This is forked out of tv2bt main package by Dave-Vallance which was created to b
 
 This has been created for Tradingview live feed for Backtrader without using webhook
 
-Backtrader provides link to tradingview feed for backtrader using webhook. Tradingview webhook example in python is also available on github @tv2bt. However, two problems have restricted use of webhook for backtrader feed.
-1. accessibility of local computer from tradingview server. What URL should be used as webhook. Flask running on local computer cannot be accessed using Local IPs. You may need to use tunneling software.
-2. Web hook on tradingview is available on subscription only
+Backtrader provides link to tradingview live feed for backtrader using webhook. Tradingview webhook example in python is also available on github @tv2bt. However, two problems have restricted use of webhook for backtrader feed.
+1. accessibility of local computer from tradingview server. What URL should be used as webhook? remains the question in the mind of users. Flask running on local computer cannot be accessed using Local IPs. You may need to use tunneling software and many fail to do so.
+2. Web hook on tradingview is available on subscription only. Can you by-pass tradingview subscription for live feed.
+
+The forked code from Dave-Vallance is not modified, but have been used along with code developed and added to the package as feed.py. This code also demonstrate that feed of any api or broker can be used in backtrader using tv2bt module without any need for modification.
+
+## Book
+In case you are new to python or struggling to use backtrader, you may refer : [Teach Yourself Python Backtrader: Step by Step Backtesting Implementation for Non-programmers](https://www.amazon.com/Teach-Yourself-Python-Backtrader-non-programmers/dp/B09RFYCJ3P).
 
 ## Installation
 Note: Developed for Python 3.x only.
