@@ -46,6 +46,7 @@ def alert():
     data = request.get_data(as_text=True)
 
     data = ast.literal_eval(data)
+    print(data)
     if not isinstance(data, dict):
         print('Warning Invalid Signal Received')
 

@@ -8,6 +8,8 @@ import requests
 from datetime import datetime
 from time import sleep
 
+symbol_name = "BTCUSDT"
+
 def generateSession():
     stringLength = 12
     letters = string.ascii_lowercase
@@ -46,7 +48,7 @@ def get_result(result):
             d0 = d1[0].split(",")
             ts = datetime.fromtimestamp(float(d0[0])).strftime("%Y-%m-%dT%H:%M:%SZ")
             url = "http://127.0.0.1:8123/tv"
-            msg = {'symbol':'NSE:SBIN', 'DT':ts, 'O':float(d0[1]), 'H':float(d0[2]), 'L':float(d0[3]), 'C':float(d0[4]), 'V':float(d0[5])}
+            msg = {'symbol':symbol_name, 'DT':ts, 'O':float(d0[1]), 'H':float(d0[2]), 'L':float(d0[3]), 'C':float(d0[4]), 'V':float(d0[5])}
             requests.post(url,json=msg)
 
 # Initialize the headers needed for the websocket connection
@@ -70,13 +72,13 @@ sendMessage(ws, "quote_set_fields",
             [session, "ch", "chp", "current_session", "description", "local_description", "language", "exchange",
              "fractional", "is_tradable", "lp", "lp_time", "minmov", "minmove2", "original_name", "pricescale",
              "pro_name", "short_name", "type", "update_mode", "volume", "currency_code", "rchp", "rtc"])
-sendMessage(ws, "quote_add_symbols", [session, "NSE:SBIN", {"flags": ['force_permission']}])
+sendMessage(ws, "quote_add_symbols", [session, symbol_name, {"flags": ['force_permission']}])
 
 sendMessage(ws, "resolve_symbol",
-            [chart_session, "symbol_1", "={\"symbol\":\"NSE:SBIN\",\"adjustment\":\"splits\"}"])
+            [chart_session, "symbol_1", "={\"symbol\":\""+symbol_name+"\",\"adjustment\":\"splits\"}"])
 sendMessage(ws, "create_series", [chart_session, "s1", "s1", "symbol_1", "1", 1])
 
-sendMessage(ws, "quote_fast_symbols", [session, "NSE:SBIN"])
+sendMessage(ws, "quote_fast_symbols", [session, symbol_name])
 
 sendMessage(ws, "create_study", [chart_session, "st1", "st1", "s1", "achal@backtrader",
                                  {"length": 20, "col_prev_close": "false"}])

@@ -4,6 +4,8 @@ tvFeed4bt.config.PORT = 8123
 import backtrader as bt
 from datetime import datetime
 from tvFeed4bt.tv_feed import TVFeed
+symbol_name = "BTCUSDT"
+
 
 class TVTest(bt.Strategy):
     '''
@@ -83,13 +85,13 @@ debug = False
 cerebro = bt.Cerebro()
 
 # Get Data
-data = TVFeed(dataname='XBT/USD',  debug=debug)
-data2 = TVFeed(dataname='ETH/USD', debug=debug, kickstart=True)
+data = TVFeed(dataname=symbol_name,  debug=debug)
+# data2 = TVFeed(dataname='ETH/USD', debug=debug, kickstart=True)
 
 # Add the data feeds
 cerebro.adddata(data)
-cerebro.adddata(data2)
-#cerebro.adddata(data3)
+# cerebro.adddata(data2)
+
 
 # Add our strategy
 cerebro.addstrategy(TVTest)
