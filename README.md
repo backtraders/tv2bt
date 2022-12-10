@@ -1,4 +1,4 @@
-# tv2bt
+# tvFeed4bt
 
 This is forked out of tv2bt main package by Dave-Vallance which was created to bridges Tradingview alerts to backtrader. For a full overview and gentle introduction to Deve-Vallance tv2bt please see: https://backtest-rookies.com/2019/11/22/tv2bt-tradingview-to-backtrader-module/
 
