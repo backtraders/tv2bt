@@ -1,13 +1,11 @@
 from setuptools import setup
 
 setup(
-   name='tv2bt',
+   name='tvFeed4bt',
    version='1.0',
-   description='A bridge between Tradingview alerts and Backtrader',
-   url='https://github.com/Dave-Vallance/tv2bt',
-   author='Dave Vallance',
-   author_email='dave@backtest-rookies.com',
+   description='Live Tradingview Feed for Backtrader without webhook',
+   url='https://github.com/backtraders/tvFeed4bt',
    license='MIT',
-   packages=['tv2bt'],
+   packages=['tvFeed4bt'],
    install_requires=['backtrader','flask'],
 )
