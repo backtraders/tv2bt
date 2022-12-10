@@ -7,5 +7,5 @@ setup(
    url='https://github.com/backtraders/tvFeed4bt',
    license='MIT',
    packages=['tvFeed4bt'],
-   install_requires=['backtrader','flask'],
+   install_requires=['backtrader','flask','websocket',"websocket-client","requests"],
 )
