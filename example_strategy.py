@@ -28,7 +28,6 @@ tv2bt.config.PORT = 8123
 import backtrader as bt
 from datetime import datetime
 from tv2bt import TVFeed
-from ccxtbt import CCXTStore
 
 class TVTest(bt.Strategy):
     '''
