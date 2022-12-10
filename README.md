@@ -10,6 +10,9 @@ Backtrader provides link to tradingview live feed for backtrader using webhook. 
 
 The forked code from Dave-Vallance is not modified, but have been used along with code developed and added to the package as feed.py. This code also demonstrate that feed of any api or broker can be used in backtrader using tv2bt module without any need for modification.
 
+For implementation of tradingview live data without subscription and tunnel ngrok software, entire python code of tv2bt module by Dave-Vallance without any modification and another code feed.py is used to fetch data from tradingview and providing to the waiting flask server of tv2bt module.
+In webhook, data was push by trading view to your IP, however, here we pull the data to computer from tradingview and push it to flaskserver for futher processing. This technique saves energy to recode entire code to create feed code of backtrader.
+
 ## Book
 In case you are new to python or struggling to use backtrader, you may refer : [Teach Yourself Python Backtrader: Step by Step Backtesting Implementation for Non-programmers](https://www.amazon.com/Teach-Yourself-Python-Backtrader-non-programmers/dp/B09RFYCJ3P).
 
